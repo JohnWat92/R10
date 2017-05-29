@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import About from './scenes/About';
 import {
   Text,
   View
@@ -13,18 +14,7 @@ import {
 export default class R10 extends Component {
   render() {
     return (
-      <View>
-        <Text>
-          Welcome to React Native!
-        </Text>
-        <Text>
-          To get started, edit index.ios.js
-        </Text>
-        <Text>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <About />
     );
   }
 }
