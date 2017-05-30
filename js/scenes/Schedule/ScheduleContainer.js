@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import About from './About';
+import Schedule from './Schedule';
 
 
 import {
   ActivityIndicator
  } from 'react-native';
 
-class AboutContainer extends Component{
+class ScheduleContainer extends Component{
   static propTypes = {
 
   }
   static route = {
     navigationBar: {
-      title: 'About',
+      title: 'Schedule',
     }
   }
   constructor(){
@@ -46,7 +46,7 @@ class AboutContainer extends Component{
       );
     } else {
     return (
-      <About
+      <Schedule
       dataSource={this.state.dataSource}
        />
     );
@@ -54,4 +54,4 @@ class AboutContainer extends Component{
   }
 }
 
-export default AboutContainer;
+export default ScheduleContainer;

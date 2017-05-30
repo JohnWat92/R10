@@ -5,7 +5,7 @@ import { Text, View, ScrollView, Image } from 'react-native';
 
 import { styles } from './styles';
 
-const About = ({dataSource}) => {
+const Schedule = ({dataSource}) => {
   return (
     <ScrollView style={styles.container}>
     <View style={styles.logo}>
@@ -36,7 +36,7 @@ const About = ({dataSource}) => {
   );
 };
 
-About.propTypes = {
+Schedule.propTypes = {
 
 };
-export default About;
+export default Schedule;
