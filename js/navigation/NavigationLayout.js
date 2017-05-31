@@ -7,22 +7,45 @@ import {
 } from '@expo/ex-navigation';
 import Router from './router';
 import Icon from 'react-native-vector-icons/Ionicons';
+import LinearGradient from 'react-native-linear-gradient';
 
 import { colors, typography } from '../config/styles';
 // Treat the TabScreen route like any other route -- you may want to set
 // it as the initial route for a top-level StackNavigation
+var styles = {
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
+  },
+};
 const defaultRouteConfig = {
   navigationBar: {
     tintColor: colors.white,
     titleStyle: {
       fontFamily: typography.fontMain
     },
-    backgroundColor: colors.red,
-    // renderBackground: () => (
-
-    // )
+    // backgroundColor: colors.red,
+    renderBackground: () => (
+      <LinearGradient
+        colors={[colors.purple, colors.red]}
+        style={styles.linearGradient}
+        start={{x: 1, y: 0}}
+        end={{x: -1, y: 1.0}}
+        locations={[0,.6]}
+      />
+    )
   }
 };
+
 class NavigationLayout extends Component {
   static route = {
     navigationBar: {

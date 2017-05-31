@@ -6,17 +6,16 @@ const GET_CONDUCT_ERROR = 'GET_CONDUCT_ERROR';
 const GET_CONDUCT = 'GET_CONDUCT';
 
 // ACTION CREATORS
-const getConductLoading = () => ({ type: GET_CONDUT_LOADING });
+const getConductLoading = () => ({ type: GET_CONDUCT_LOADING });
 const getConductError = (error) => ({ type: GET_CONDUCT_ERROR, payload: error });
 const getConduct = (codes) => ({ type: GET_CONDUCT, payload: codes });
 
 export const _fetchConduct = () => (dispatch) => {
   dispatch(getConductLoading());
-
-  return fetch(`${firebaseURL}/code_of_conduct.json`)
+  return fetch(`${fireBaseUrl}/code_of_conduct.json`)
     .then( response => response.json() )
     .then( conduct => dispatch(getConduct(conduct)))
-    .catch(error => dispatch(getConductError(error)))
+    .catch( error => dispatch(getConductError(error)))
 };
 
 //Reducer
