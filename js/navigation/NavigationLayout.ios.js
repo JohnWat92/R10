@@ -55,9 +55,22 @@ class NavigationLayout extends Component {
   render(){
     return (
       <TabNavigation
-        initialTab='About'
+        initialTab='schedule'
         tabBarColor={colors.black}
       >
+        <TabItem
+          id='schedule'
+          title='Schedule'
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon('ios-calendar-outline', isSelected)}
+        >
+          <StackNavigation
+            id='schedule'
+            navigatorUID="schedule"
+            initialRoute={Router.getRoute('Schedule')}
+            defaultRouteConfig={defaultRouteConfig}
+          />
+        </TabItem>
         <TabItem
           id='About'
           title='About'
@@ -67,18 +80,6 @@ class NavigationLayout extends Component {
           <StackNavigation
             id='about'
             initialRoute={Router.getRoute('About')}
-            defaultRouteConfig={defaultRouteConfig}
-          />
-        </TabItem>
-        <TabItem
-          id='schedule'
-          title='Schedule'
-          renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon('ios-calendar-outline', isSelected)}
-        >
-          <StackNavigation
-            id='schedule'
-            initialRoute={Router.getRoute('Schedule')}
             defaultRouteConfig={defaultRouteConfig}
           />
         </TabItem>

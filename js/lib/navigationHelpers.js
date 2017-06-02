@@ -5,6 +5,13 @@ import Router from '../navigation/router';
 export const goToSession = (currentNavigatorUID, sessionData) => {
   Store.dispatch(NavigationActions.push(
     currentNavigatorUID,
-    Router.getRoute('session', { sessionData })
+    Router.getRoute('Session', { sessionData })
+  ));
+}
+
+export const goToSpeaker = (speakerData) => {
+  Store.dispatch(NavigationActions.push(
+    'root',
+    Router.getRoute('Speaker', { speakerData })
   ));
 }

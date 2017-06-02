@@ -17,7 +17,6 @@ export const _fetchSessions = () => (dispatch) => {
     .then( session => dispatch(getSession(session)))
     .catch( error => dispatch(getSessionError(error)))
 };
-
 //Reducer
 export default function reducer( state = {
   isLoading: false,
@@ -42,7 +41,7 @@ export default function reducer( state = {
       });
     }
     case GET_SESSION: {
-      const formattedData = formatSessionData(action.payload)
+      let formattedData = formatSessionData(action.payload)
       return Object.assign({}, state, {
         isLoading: false,
         error: '',
@@ -53,4 +52,4 @@ export default function reducer( state = {
       return state;
     }
   }
-};
+}

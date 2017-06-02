@@ -18,6 +18,7 @@ import {
   NavigationContext,
   NavigationProvider,
   StackNavigation,
+  NavigationStyles
 } from '@expo/ex-navigation';
 
 import Router from './navigation/router';
@@ -35,7 +36,14 @@ export default class R10 extends Component {
         <Provider store={Store}>
           <NavigationProvider context={navigationContext}>
           <StatusBar barStyle='light-content' />
-            <StackNavigation initialRoute={Router.getRoute('Layout')} />
+            <StackNavigation
+              id='root'
+              navigatorUID='root'
+              initialRoute={Router.getRoute('Layout')}
+              defaultRouterConfig={{
+                styles: {...NavigationStyles.SlideVertical,},
+               }}
+            />
           </NavigationProvider>
         </Provider>
     );

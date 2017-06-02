@@ -1,24 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Text, View, ListView } from 'react-native';
+import { Text, View, ListView, Image } from 'react-native';
 import { formatSessionData } from '../../lib/dataFormatHelper';
 import { styles } from './styles';
+import SessionListItem from '../../components/SessionListItem';
 
-const Schedule = ({dataSource}) => {
-  console.log('THIS IS THE DATASOURCE', dataSource)
+const Schedule = ({ dataSource }) => {
   return (
-    <View style={styles.container}>
       <ListView
         dataSource={dataSource}
-        renderRow={(data) => (
-          <View>
-            <Text>{data.title}</Text>
-            <Text>{data.description}</Text>
-          </View>
-        )}
+        renderRow={(data) => {
+          return (
+            <SessionListItem rowData={data} currentNavigatorUID="schedule" />
+          )
+        }}
       />
-    </View>
   );
 };
 Schedule.propTypes = {

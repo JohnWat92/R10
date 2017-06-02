@@ -3,32 +3,33 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFFFF',
+    marginLeft: 16,
+    paddingRight: 16,
     flex:1,
   },
   singleConductDescription: {
     flexDirection: 'column',
-    marginLeft: 16,
     marginTop:8,
     marginBottom: 8,
-    marginRight:16,
   },
   logo: {
     flex:1,
-    marginTop:32,
+    marginTop:24,
     marginBottom: 16,
     alignItems:'center',
+    paddingBottom: 25,
+    borderColor: '#E8E8E8',
+    borderBottomWidth: 1.5
   },
   singleConductTitle: {
     flexDirection: 'column',
-    marginLeft: 16,
-    marginRight:16,
     marginTop:8,
     marginBottom: 8,
     fontWeight: 'bold',
   },
   headings: {
     fontSize:20,
-    marginLeft: 16,
+    fontWeight:'bold',
     marginTop:8,
     marginBottom:8,
   },
