@@ -57,12 +57,12 @@ class NavigationLayout extends Component {
       <DrawerNavigation
         initialItem='schedule'
         tabBarColor={colors.black}
-        drawerWidth={200}
+        drawerWidth={100}
       >
         <DrawerNavigationItem
           id='schedule'
           title='Schedule'
-          renderTitle={isSelected => this._renderTitle('Schedule', isSelected)}
+          renderTitle={isSelected => this._renderTitle(' Schedule', isSelected)}
           renderIcon={isSelected => this.renderIcon('md-calendar', isSelected)}
         >
           <StackNavigation
@@ -75,8 +75,8 @@ class NavigationLayout extends Component {
         <DrawerNavigationItem
           id='Faves'
           title='Faves'
-          renderTitle={this.renderTitle}
-          renderIcon={isSelected => this.renderIcon('ios-heart', isSelected)}
+          renderTitle={isSelected => this._renderTitle(' Faves', isSelected)}
+          renderIcon={isSelected => this.renderIcon('md-heart', isSelected)}
         >
           <StackNavigation
             id='Faves'
@@ -87,7 +87,7 @@ class NavigationLayout extends Component {
         </DrawerNavigationItem>
         <DrawerNavigationItem
           id='About'
-          renderTitle={isSelected => this._renderTitle('About', isSelected)}
+          renderTitle={isSelected => this._renderTitle(' About', isSelected)}
           renderIcon={isSelected => this.renderIcon('md-information-circle', isSelected)}
         >
           <StackNavigation
