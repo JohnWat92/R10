@@ -16,7 +16,7 @@ class SessionContainer extends Component{
   }
   render(){
     return (
-      <Session sessionData={this.props.sessionData} speakerData={this.props.speaker} faveOn={this.props.session} />
+      <Session sessionData={this.props.sessionData} speakerData={this.props.speaker} faveIds={this.props.faveIds} />
     )
   }
 }
@@ -32,7 +32,8 @@ function mapDispatchToProps(dispatch){
 function mapStateToProps(state){
   return {
     speaker: state.speaker.speakerInfo,
-    session: state.session
+    session: state.session,
+    faveIds: state.faves.faveIds
   }
 }
 

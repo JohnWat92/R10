@@ -21,4 +21,5 @@ const Schedule = ({ dataSource }) => {
 Schedule.propTypes = {
 
 };
+
 export default Schedule;

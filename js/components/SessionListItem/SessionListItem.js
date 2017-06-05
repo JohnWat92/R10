@@ -6,6 +6,7 @@ import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { goToSession } from '../../lib/navigationHelpers';
 import { styles } from './styles';
+import { createFav } from '../../config/models';
 
 class SessionListItem extends Component {
   constructor(){
@@ -20,6 +21,7 @@ class SessionListItem extends Component {
     });
   }
   render() {
+    // console.log(this.props)
     return (
       <TouchableHighlight onPress={() => goToSession(this.props.currentNavigatorUID, this.props.rowData)}>
         <View style={styles.container}>

@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { _fetchSessions } from '../../redux/modules/sessions';
+import { _fetchFaves } from '../../redux/modules/faves';
 import Schedule from './Schedule';
 
 import { ActivityIndicator, ListView } from 'react-native';
+import realm from '../../config/models';
 
 class ScheduleContainer extends Component{
   static propTypes = {
@@ -18,6 +20,11 @@ class ScheduleContainer extends Component{
   }
   componentDidMount(){
     this.props.fetchSessions();
+    this.props.fetchFaves();
+    realm.addListener('change', () => {
+      this.props.fetchSessions();
+      this.props.fetchFaves();
+    });
   }
   render(){
     if (this.props.isLoading) {
@@ -43,6 +50,9 @@ function mapDispatchToProps(dispatch){
   return {
     fetchSessions(){
       dispatch(_fetchSessions())
+    },
+    fetchFaves(){
+      dispatch(_fetchFaves())
     }
   }
 }
@@ -54,7 +64,8 @@ function mapStateToProps(state){
       state.session.sessionData.sectionIds,
       state.session.sessionData.rowIds
     ),
-    isLoading: state.session.isLoading
+    isLoading: state.session.isLoading,
+    faveIds: state.faves.faveIds
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(ScheduleContainer);
