@@ -15,7 +15,7 @@ class FavesContainer extends Component{
   }
   render(){
     return (
-      <Faves />
+      <Faves session={this.props.session}/>
     )
   }
 }

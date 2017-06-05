@@ -24,7 +24,6 @@ export const styles = StyleSheet.create({
     fontSize: typography.baseSize
   },
   aboutMoreButton: {
-    fontFamily: typography.fontMainlight,
     borderRadius: 20,
     // backgroundColor: 'grey',
     padding: 8,

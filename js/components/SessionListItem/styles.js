@@ -16,10 +16,11 @@ export const styles = StyleSheet.create({
   secondRow:{
     flexDirection:'row',
     justifyContent:'space-between',
-    fontFamily: typography.fontMain,
     marginTop:8
   },
   secondRowText:{
     color: colors.mediumGrey,
+    fontSize: typography.baseSize,
+    fontFamily: typography.fontMain,
   }
 });

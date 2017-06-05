@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
   locationText: {
     color: colors.mediumGrey,
     fontFamily: typography.fontMain,
+    fontSize: typography.baseSize,
     marginBottom: 12
   },
   titleText:{

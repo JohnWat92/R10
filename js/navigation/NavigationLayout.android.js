@@ -60,17 +60,6 @@ class NavigationLayout extends Component {
         drawerWidth={200}
       >
         <DrawerNavigationItem
-          id='About'
-          renderTitle={isSelected => this._renderTitle('About', isSelected)}
-          renderIcon={isSelected => this.renderIcon('md-information-circle', isSelected)}
-        >
-          <StackNavigation
-            id='about'
-            initialRoute={Router.getRoute('About')}
-            defaultRouteConfig={defaultRouteConfig}
-          />
-        </DrawerNavigationItem>
-        <DrawerNavigationItem
           id='schedule'
           title='Schedule'
           renderTitle={isSelected => this._renderTitle('Schedule', isSelected)}
@@ -80,6 +69,30 @@ class NavigationLayout extends Component {
             id='schedule'
             navigatorUID="schedule"
             initialRoute={Router.getRoute('Schedule')}
+            defaultRouteConfig={defaultRouteConfig}
+          />
+        </DrawerNavigationItem>
+        <DrawerNavigationItem
+          id='Faves'
+          title='Faves'
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon('ios-heart', isSelected)}
+        >
+          <StackNavigation
+            id='Faves'
+            navigatorUID="Faves"
+            initialRoute={Router.getRoute('Faves')}
+            defaultRouteConfig={defaultRouteConfig}
+          />
+        </DrawerNavigationItem>
+        <DrawerNavigationItem
+          id='About'
+          renderTitle={isSelected => this._renderTitle('About', isSelected)}
+          renderIcon={isSelected => this.renderIcon('md-information-circle', isSelected)}
+        >
+          <StackNavigation
+            id='about'
+            initialRoute={Router.getRoute('About')}
             defaultRouteConfig={defaultRouteConfig}
           />
         </DrawerNavigationItem>
