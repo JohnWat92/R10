@@ -40,8 +40,8 @@ class ConductItem extends Component {
       }
     }
     return (
-      <TouchableOpacity onPress={this.onChange}>
-        <Text style={styles.singleConductTitle} >
+      <TouchableOpacity >
+        <Text onPress={this.onChange} style={styles.singleConductTitle} >
           {(this.state.expanded) ?
             <Animated.Text style={animatedStyles.expandSymbol}>- </Animated.Text>
             :
