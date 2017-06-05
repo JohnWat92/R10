@@ -20,6 +20,7 @@ import {
   StackNavigation,
   NavigationStyles
 } from '@expo/ex-navigation';
+import { colors } from './config/styles';
 
 import Router from './navigation/router';
 
@@ -42,6 +43,10 @@ export default class R10 extends Component {
               initialRoute={Router.getRoute('Layout')}
               defaultRouterConfig={{
                 styles: {...NavigationStyles.SlideVertical,},
+                navigationBar: {
+                  visible: true,
+                },
+                backgroundColor: colors.black,
                }}
             />
           </NavigationProvider>

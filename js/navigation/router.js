@@ -6,7 +6,7 @@ import About from '../scenes/About';
 import Schedule from '../scenes/Schedule';
 import NavigationLayout from './NavigationLayout';
 import Session from '../scenes/Session';
-import Speaker from '../scenes/Speaker'
+import Speaker from '../scenes/Speaker';
 
 const Router = createRouter(() => ({
   Layout: () => NavigationLayout,
