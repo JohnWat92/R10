@@ -9,19 +9,8 @@ import { styles } from './styles';
 import { createFav } from '../../config/models';
 
 class SessionListItem extends Component {
-  constructor(){
-    super();
-    this.state={
-      isFaved: false
-    }
-  }
-  faving = () => {
-    this.setState({
-      isFaved: !this.state.isFaved
-    });
-  }
   render() {
-    // console.log(this.props)
+    console.log(this.props.rowData)
     return (
       <TouchableHighlight onPress={() => goToSession(this.props.currentNavigatorUID, this.props.rowData)}>
         <View style={styles.container}>
@@ -30,7 +19,7 @@ class SessionListItem extends Component {
           </View>
           <View style={styles.secondRow}>
             <Text style={styles.secondRowText}>{this.props.rowData.location}</Text>
-            {(this.state.isFaved) ? <Icon name={Platform.OS === "ios" ? 'ios-heart' : 'md-heart'} onPress={this.faving} size={20} color="#cf392a"/> : <Icon name={Platform.OS === "ios" ? 'ios-heart-outline' : 'md-heart-outline'}  onPress={this.faving} size={20}/>}
+            {this.props.faveIds.includes(this.props.rowData.session_id) ? <Icon name={Platform.OS === "ios" ? 'ios-heart' : 'md-heart'} size={20} color="#cf392a"/> : <Icon name={Platform.OS === "ios" ? 'ios-heart-outline' : 'md-heart-outline'} size={20}/>}
           </View>
         </View>
       </TouchableHighlight>
