@@ -10,7 +10,7 @@ const Fave = {
 }
 
 const realm = new Realm({ schema:[Fave] });
-console.log('the path is: ', realm.path);
+// console.log('the path is: ', realm.path);
 
 export const queryFaves = () => {
   let faveIds = realm.objects('Fave').map((fave) => fave.id);

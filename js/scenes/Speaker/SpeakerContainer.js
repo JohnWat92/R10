@@ -19,6 +19,7 @@ class SpeakerContainer extends Component{
     },
   }
   render(){
+    console.log('speaker', this.props)
     return (
       <Speaker speaker={this.props.speaker}/>
     )

@@ -57,7 +57,7 @@ class NavigationLayout extends Component {
       <DrawerNavigation
         initialItem='schedule'
         tabBarColor={colors.black}
-        drawerWidth={100}
+        drawerWidth={200}
       >
         <DrawerNavigationItem
           id='schedule'

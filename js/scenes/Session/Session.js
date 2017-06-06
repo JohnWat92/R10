@@ -12,20 +12,8 @@ import { colors, typography } from '../../config/styles';
 import { createFave, deleteFave, queryFaves } from '../../config/models';
 
 class Session extends Component {
-  // faving = (id) => {
-  //   if(this.props.faveIds.includes(this.props.sessionData.session_id)){
-  //     deleteFave(id)
-  //     return
-  //   }else{
-  //     createFave(id);
-  //     return
-  //   }
-  // }
-
   render() {
     const pictureSize = 50;
-    let isFaved = false;
-    // console.log('faveIds', this.props.faveIds.includes(this.props.sessionData.session_id))
     return (
       <View style={styles.container}>
         <View style={styles.locationHeart}>

@@ -5,22 +5,15 @@ import moment from 'moment';
 import { styles } from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import { goToSpeaker } from '../../lib/navigationHelpers';
+// import { goToSpeaker } from '../../lib/navigationHelpers';
 
 class Faves extends Component {
-  constructor(){
-    super();
-    this.state={
-      isFaved: false,
-    }
-  }
-  faving = () => {
-    this.setState({
-      isFaved: !this.state.isFaved
-    });
-  }
   render() {
+    // let favArray = this.props.faveIds.includes()
     console.log("this.props", this.props)
+    // const favArray = this.props.session.sessionData.rowIds.filter((id) => {
+    //   return id === this.props.faveIds
+    // })
     return (
       <View style={styles.container}>
         <Text> THIS IS FAV</Text>

@@ -12,7 +12,7 @@ const getFaves = (favedSessions, faveIds) => ({ type: GET_FAVES, payload: {faved
 import { queryFaves } from '../../config/models';
 
 export const _fetchFaves = () => (dispatch) => {
-  const faveIds = queryFaves()
+  const faveIds = queryFaves();
   dispatch(getFavesLoading());
   return fetch(`${fireBaseUrl}/sessions.json`)
     .then( response => response.json() )
@@ -49,7 +49,7 @@ export default function reducer( state = {
       });
     }
     case GET_FAVES: {
-      let formattedData = formatSessionData(action.payload)
+      let formattedData = formatSessionData(action.payload.filteredSessions)
       return Object.assign({}, state, {
         isLoading:false,
         favedSessions: formattedData,
