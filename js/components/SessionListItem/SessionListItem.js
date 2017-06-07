@@ -10,6 +10,7 @@ import { createFav } from '../../config/models';
 
 class SessionListItem extends Component {
   render() {
+  // console.log('sessionListItem', this.props)
     return (
       <TouchableHighlight onPress={() => goToSession(this.props.currentNavigatorUID, this.props.rowData)}>
         <View style={styles.container}>

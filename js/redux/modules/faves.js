@@ -49,7 +49,11 @@ export default function reducer( state = {
       });
     }
     case GET_FAVES: {
-      let formattedData = formatSessionData(action.payload.filteredSessions)
+      // console.log(action.payload)
+      console.log('action.payload.favedSessions', action.payload.favedSessions);
+      let formattedData = formatSessionData(action.payload.favedSessions)
+      console.log('formattedData', formattedData);
+
       return Object.assign({}, state, {
         isLoading:false,
         favedSessions: formattedData,

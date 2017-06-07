@@ -8,6 +8,7 @@ import SessionListItem from '../../components/SessionListItem';
 
 const Schedule = ({ dataSource, faveIds, sessionData}) => {
   return (
+    // console.log(dataSource )
       <ListView
         dataSource={dataSource}
         renderRow={(data) => {

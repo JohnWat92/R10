@@ -15,20 +15,30 @@ class FavesContainer extends Component{
     }
   }
   componentDidMount(){
-    this.props.fetchSessions();
     this.props.fetchFaves();
+    this.props.fetchSessions();
     realm.addListener('change', () => {
       this.props.fetchSessions();
       this.props.fetchFaves();
     });
   }
   render(){
-    console.log(this.props)
-    return (
-      <Faves session={this.props.session} faveIds={this.props.faveIds}/>
-    )
+    console.log('this.props favesContainer', this.props)
+    if(this.props.isLoading){
+      return (
+        <ActivityIndicator animating={true} size="small" color="black" />
+      )
+    }else{
+      return (
+        <Faves rowData={this.props.favedSessions} faveIds={this.props.faveIds}/>
+      )
+    }
   }
 }
+const ds = new ListView.DataSource({
+  rowHasChanged: (r1, r2) => r1 !== r2,
+  sectionHeaderHasChanged: (s1, s2) => s1 !== s2
+});
 
 function mapDispatchToProps(dispatch){
   return {
@@ -43,8 +53,12 @@ function mapDispatchToProps(dispatch){
 
 function mapStateToProps(state){
   return {
-    session: state.session.sessionData,
-    faveIds: state.faves
+    favedSessions: ds.cloneWithRowsAndSections(
+      state.faves.favedSessions.dataBlob,
+      state.faves.favedSessions.sectionIds,
+      state.faves.favedSessions.rowIds
+    ),
+    faveIds: state.faves.faveIds,
   }
 }
 
