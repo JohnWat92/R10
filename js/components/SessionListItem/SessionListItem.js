@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ListView, View, Text, Image, TouchableHighlight, Platform } from 'react-native';
+import { ListView, View, Text, Image, TouchableOpacity, Platform } from 'react-native';
 
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -12,7 +12,7 @@ class SessionListItem extends Component {
   render() {
   // console.log('sessionListItem', this.props)
     return (
-      <TouchableHighlight onPress={() => goToSession(this.props.currentNavigatorUID, this.props.rowData)}>
+      <TouchableOpacity onPress={() => goToSession(this.props.currentNavigatorUID, this.props.rowData)}>
         <View style={styles.container}>
           <View >
             <Text style={styles.firstRow}>{this.props.rowData.title}</Text>
@@ -27,7 +27,7 @@ class SessionListItem extends Component {
             }
           </View>
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     );
   }
 }

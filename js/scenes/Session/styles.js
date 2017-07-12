@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
     fontFamily: typography.fontMainlight
   },
   removeFavesButton: {
-    fontFamily: typography.fontMainlight,
+    // fontFamily: typography.fontMainlight,
     borderRadius: 20,
     // backgroundColor: 'grey',
     padding: 8,

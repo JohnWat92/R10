@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Session from './Session';
 import { connect } from 'react-redux';
-import { ActivityIndicator, ListView, View, Text, Image } from 'react-native';
 import { _fetchSpeakers } from '../../redux/modules/speakers';
 
 class SessionContainer extends Component{
@@ -36,5 +35,10 @@ function mapStateToProps(state){
     faveIds: state.faves.faveIds
   }
 }
-
+SessionContainer.propTypes = {
+  sessionData: PropTypes.object,
+  speaker: PropTypes.object,
+  faveIds: PropTypes.array,
+  fetchSpeakers: PropTypes.func,
+}
 export default connect(mapStateToProps, mapDispatchToProps)(SessionContainer);

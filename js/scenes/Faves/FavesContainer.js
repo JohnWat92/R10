@@ -23,7 +23,7 @@ class FavesContainer extends Component{
     });
   }
   render(){
-    console.log('this.props favesContainer', this.props)
+    // console.log('this.props favesContainer', this.props)
     if(this.props.isLoading){
       return (
         <ActivityIndicator animating={true} size="small" color="black" />
