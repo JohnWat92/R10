@@ -9,12 +9,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { goToSpeaker } from '../../lib/navigationHelpers';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { colors, typography } from '../../config/styles';
-import { createFave, deleteFave, queryFaves } from '../../config/models';
+import { colors } from '../../config/styles';
+import { createFave, deleteFave } from '../../config/models';
 
 class Session extends Component {
   render() {
-    console.log(this.props)
     const pictureSize = 50;
     return (
       <ScrollView style={styles.container}>
@@ -29,10 +28,10 @@ class Session extends Component {
         <Text style={styles.titleText}>{this.props.sessionData.title}</Text>
         <Text style={styles.sessionTime}>{moment.unix(this.props.sessionData.start_time).format('LT')}</Text>
         <Text style={styles.sessionDescription}>{this.props.sessionData.description}</Text>
-        {this.props.speakerData.image ?
+        {this.props.sessionData.title !== 'Lunch' ?
         <View>
         <Text style={styles.locationText}>Presented by:</Text>
-          <TouchableOpacity style={styles.pictureAndName} onPress={() => goToSpeaker(this.props.speakerData)} renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}>
+          <TouchableOpacity style={styles.pictureAndName} onPress={() => goToSpeaker(this.props.speakerData)}>
             <Image
               style={{width: pictureSize, height: pictureSize, borderRadius: pictureSize/2}}
               source={{uri:`${this.props.speakerData.image}`}}
@@ -41,7 +40,7 @@ class Session extends Component {
           </TouchableOpacity>
         </View>
         :
-        <Text></Text>}
+        <View></View>}
         {!this.props.faveIds.includes(this.props.sessionData.session_id) ?
           <TouchableOpacity onPress={() => createFave(this.props.sessionData.session_id)} style={styles.removeFromFavesTop} >
             <LinearGradient

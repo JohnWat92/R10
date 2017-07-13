@@ -11,7 +11,12 @@ import realm from '../../config/models';
 
 class ScheduleContainer extends Component{
   static propTypes = {
-
+    fetchSessions: PropTypes.func,
+    fetchFaves: PropTypes.func,
+    isLoading: PropTypes.bool,
+    dataSource: PropTypes.object,
+    faveIds: PropTypes.array,
+    session: PropTypes.object,
   }
   static route = {
     navigationBar: {
@@ -69,4 +74,5 @@ function mapStateToProps(state){
     session: state.session
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(ScheduleContainer);

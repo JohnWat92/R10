@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { View, Text, TouchableOpacity, Platform } from 'react-native';
 
-import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { goToSession } from '../../lib/navigationHelpers';
 import { styles } from './styles';
 
 class SessionListItem extends Component {
   render() {
-  // console.log('sessionListItem', this.props)
+  console.log('sessionListItem', this.props)
     return (
       <TouchableOpacity onPress={() => goToSession(this.props.currentNavigatorUID, this.props.rowData)}>
         <View style={styles.container}>

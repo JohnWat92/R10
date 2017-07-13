@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
-import { Platform, Text, View, Image,ListView,  TouchableOpacity } from 'react-native';
-import moment from 'moment';
-
-import { styles } from './styles';
-import Icon from 'react-native-vector-icons/Ionicons';
-
+import React from 'react';
+import { ListView } from 'react-native';
+import PropTypes from 'prop-types';
 import SessionListItem from '../../components/SessionListItem';
 
 const Faves = ({ rowData, faveIds, sessionData}) => {
   return (
-    // console.log(dataSource )
       <ListView
         dataSource={rowData}
         renderRow={(data) => {
@@ -20,9 +15,11 @@ const Faves = ({ rowData, faveIds, sessionData}) => {
       />
   );
 };
-// Schedule.propTypes = {
-
-// };
+Faves.propTypes = {
+  rowData: PropTypes.object,
+  faveIds: PropTypes.array,
+  sessionData: PropTypes.object,
+};
 
 export default Faves;
 
