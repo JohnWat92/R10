@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-type';
-import { Platform, Text, View, Image, TouchableHighlight, ScrollView } from 'react-native';
-import moment from 'moment';
+import PropTypes from 'prop-types';
+
+import { Text, View, Image, ScrollView } from 'react-native';
 import Hyperlink from 'react-native-hyperlink'
 import { styles } from './styles';
 import { colors } from '../../config/styles';
-import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 
 

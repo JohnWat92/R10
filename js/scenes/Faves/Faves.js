@@ -9,7 +9,7 @@ const Faves = ({ rowData, faveIds, sessionData}) => {
         dataSource={rowData}
         renderRow={(data) => {
           return (
-            <SessionListItem rowData={data} faveIds={faveIds} sessionData={sessionData} />
+            <SessionListItem rowData={data} currentNavigatorUID="Faves" faveIds={faveIds} sessionData={sessionData} />
           )
         }}
       />
