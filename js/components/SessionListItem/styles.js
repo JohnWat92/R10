@@ -3,9 +3,11 @@ import {colors, typography} from '../../config/styles';
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFFFF',
-    marginLeft: 16,
-    paddingRight: 16,
+    paddingHorizontal: 16,
+    paddingBottom: 8,
     flex:1,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: 'lightgrey',
   },
   firstRow: {
     fontSize: 16,
@@ -22,5 +24,5 @@ export const styles = StyleSheet.create({
     color: colors.mediumGrey,
     fontSize: typography.baseSize,
     fontFamily: typography.fontMain,
-  }
+  },
 });

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { ListView, View, Text, Image, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, TouchableOpacity, Platform } from 'react-native';
 
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { goToSession } from '../../lib/navigationHelpers';
 import { styles } from './styles';
-import { createFav } from '../../config/models';
 
 class SessionListItem extends Component {
   render() {
@@ -30,6 +28,11 @@ class SessionListItem extends Component {
       </TouchableOpacity>
     );
   }
+}
+SessionListItem.propTypes = {
+  currentNavigatorUID: PropTypes.string,
+  rowData: PropTypes.object,
+  faveIds: PropTypes.array,
 }
 
 export default SessionListItem;
