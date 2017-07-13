@@ -6,7 +6,7 @@ import { _fetchSpeakers } from '../../redux/modules/speakers';
 import { colors, typography } from '../../config/styles';
 
 class SpeakerContainer extends Component{
-  static PropTypes = {
+  static propTypes = {
     speaker: PropTypes.object
   }
   static route = {

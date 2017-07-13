@@ -23,7 +23,6 @@ class Speaker extends Component {
     const aboutButton = () => {
 
     }
-    console.log('this.props.speaker', this.props.speaker);
     return (
       <View style={styles.container}>
       <ScrollView>
@@ -49,7 +48,7 @@ class Speaker extends Component {
     );
   }
 }
-Speaker.PropTypes = {
+Speaker.propTypes = {
   speaker: PropTypes.object,
 }
 
