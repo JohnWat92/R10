@@ -31,5 +31,5 @@ export const deleteFave = (faveId) => {
     realm.delete(fave);
   })
 };
-//CRUD OPERATIONS!!!!!!!!!!
+
 export default realm;

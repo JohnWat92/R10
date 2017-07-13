@@ -10,8 +10,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 
 import { colors, typography } from '../config/styles';
-// Treat the TabScreen route like any other route -- you may want to set
-// it as the initial route for a top-level StackNavigation
+
 var styles = {
   linearGradient: {
     flex: 1,
@@ -33,7 +32,6 @@ const defaultRouteConfig = {
     titleStyle: {
       fontFamily: typography.fontMain
     },
-    // backgroundColor: colors.red,
     renderBackground: () => (
       <LinearGradient
         colors={[colors.purple, colors.red]}
@@ -57,7 +55,7 @@ class NavigationLayout extends Component {
       <DrawerNavigation
         initialItem='schedule'
         tabBarColor={colors.black}
-        drawerWidth={200}
+        drawerWidth={220}
       >
         <DrawerNavigationItem
           id='schedule'
