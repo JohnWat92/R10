@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Speaker from './Speaker';
 import { connect } from 'react-redux';
-import { ActivityIndicator, ListView, View, Text, Image } from 'react-native';
 import { _fetchSpeakers } from '../../redux/modules/speakers';
 import { colors, typography } from '../../config/styles';
 
 class SpeakerContainer extends Component{
+  static PropTypes = {
+    speaker: PropTypes.object
+  }
   static route = {
     navigationBar: {
       title: 'About the Speaker',
@@ -19,7 +21,6 @@ class SpeakerContainer extends Component{
     },
   }
   render(){
-    console.log('speaker', this.props)
     return (
       <Speaker speaker={this.props.speaker}/>
     )
@@ -39,5 +40,6 @@ function mapStateToProps(state){
     speaker: state.speaker.speakerInfo
   }
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(SpeakerContainer);

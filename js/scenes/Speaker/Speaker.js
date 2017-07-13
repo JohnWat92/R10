@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-type';
 import { Platform, Text, View, Image, TouchableHighlight, ScrollView } from 'react-native';
 import moment from 'moment';
 import Hyperlink from 'react-native-hyperlink'
@@ -48,6 +49,9 @@ class Speaker extends Component {
       </View>
     );
   }
+}
+Speaker.PropTypes = {
+  speaker: PropTypes.object,
 }
 
 export default Speaker;

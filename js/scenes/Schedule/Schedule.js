@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Text, View, ListView, Image } from 'react-native';
-import { formatSessionData } from '../../lib/dataFormatHelper';
-import { styles } from './styles';
+import { ListView } from 'react-native';
 import SessionListItem from '../../components/SessionListItem';
 
 const Schedule = ({ dataSource, faveIds, sessionData}) => {
   return (
-    // console.log(dataSource )
       <ListView
         dataSource={dataSource}
         renderRow={(data) => {
@@ -20,7 +17,9 @@ const Schedule = ({ dataSource, faveIds, sessionData}) => {
   );
 };
 Schedule.propTypes = {
-
+  dataSource: PropTypes.object,
+  faveIds: PropTypes.array,
+  sessionData: PropTypes.object,
 };
 
 export default Schedule;
